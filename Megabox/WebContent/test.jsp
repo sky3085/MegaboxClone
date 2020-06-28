@@ -19,16 +19,13 @@
 Click a = new Click();
 a.Crawling();
 %> --%>
-<c:set var="movie_title" value="${param.movietitle }" />
 <%
 
-	String movie_title=request.getParameter("movie_title");
-    String greeting = request.getParameter("greeting");
 
 //Selenium a = new Selenium();
 //a.bookingSelenium();
-//Click a = new Click();
-//a.Crawling();
+Click a = new Click();
+a.Crawling();
 %>
 
 </body>

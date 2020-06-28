@@ -24,11 +24,11 @@ public class GetDetail {
 
 	private int Max = 10;
 	private String DRIVER_ID = "webdriver.chrome.driver"; // chromedriver 사용
-	private String DRIVER_PATH = "C://Users//Moon//eclipse-workspace//portfolio_movie//portfolio_movie//Megabox//WebContent//WEB-INF//libs//chromedriver.exe";
-//	private String DRIVER_PATH="/Users/jina/git/portfolio_movie/Megabox/WebContent/WEB-INF/libs/chromedriver";
+	//private String DRIVER_PATH = "C://Users//Moon//eclipse-workspace//portfolio_movie//portfolio_movie//Megabox//WebContent//WEB-INF//libs//chromedriver.exe";
+	private String DRIVER_PATH="/Users/jina/git/MegaboxClone/Megabox/WebContent/WEB-INF/libs/chromedriver";
 	private String realpath = "poster"; // 디비에 저장될 상대 경로
-//	private String path = "/Users/jina/git/portfolio_movie/Megabox/WebContent/poster";// 절대 경로로 저장
-	private String path = "C://Users//Moon//eclipse-workspace//portfolio_movie//portfolio_movie//Megabox//WebContent//poster";
+	private String path = "/Users/jina/git/MegaboxClone/Megabox/WebContent/poster";// 절대 경로로 저장
+//	private String path = "C://Users//Moon//eclipse-workspace//portfolio_movie//portfolio_movie//Megabox//WebContent//poster";
 	private String url = "";// 정보 가져올 영화 링크
 	private int i = 0;
 	//private List<MovieDTO> movieList;
@@ -39,7 +39,6 @@ public class GetDetail {
 		//this.movieList = movieList;
 	}
 
-	@SuppressWarnings("unlikely-arg-type")
 	public void Crawling() {
 		System.setProperty(DRIVER_ID, DRIVER_PATH);
 		WebDriver driver = new ChromeDriver();
@@ -246,7 +245,6 @@ public class GetDetail {
 				String url="jdbc:mariadb://127.0.0.1:3306/project";
 				String user = "root";
 				String pw="1234";
-				//String pw = "1234";
 				Class.forName("org.mariadb.jdbc.Driver");
 				conn = DriverManager.getConnection(url, user, pw);
 				String sql = "insert into mega_movie(movie_title,movie_release,movie_summary,\n"

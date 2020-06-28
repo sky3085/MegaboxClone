@@ -24,7 +24,7 @@
 
 		function FindPw(Name, Id) {
 			$.ajax({
-				url : 'PwFindDAO',
+				url : '/Megabox/PwFindDAO',
 				type : 'POST',
 				dataType : 'text',
 				data : {

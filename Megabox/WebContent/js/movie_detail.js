@@ -164,7 +164,6 @@ $(function() {
 		/*리뷰작성 여부 확인*/
 		var check_wrote=$(this).attr('check_wrote');
 		if(check_wrote>=1){
-			alert("리뷰이미 작성함");
 			return false;
 		}
 		$('.write_popup_wrapper').show();
@@ -179,7 +178,7 @@ $(function() {
 		 e.preventDefault();
 		$('.write-review').hide();
 		$.ajax({
-			url:'megaboxClass/ReviewDAO',
+			url:'/Megabox/ReviewDAO',
 			type:'POST',
 			dataType:'text',
 			data:{
@@ -239,7 +238,7 @@ $(function() {
 			review_score=$('#score-count').text();
 			review_text=$('#text-area').val();
 			$.ajax({
-					url:'ReviewEditDAO',
+					url:'/Megabox/ReviewEditDAO',
 					type:'POST',
 					dataType:'text',
 					data:{
@@ -268,7 +267,7 @@ $(function() {
 		var review_id=$(this).attr('data-id');
 		var review_title=$(this).attr('data-title');
            $.ajax({
-			url:'ReviewDeleteDAO',
+			url:'/Megabox/ReviewDeleteDAO',
 			type:'POST',
 			dataType:'text',
 			data:{

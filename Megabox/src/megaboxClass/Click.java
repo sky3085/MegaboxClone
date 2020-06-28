@@ -18,8 +18,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class Click {
 	String DRIVER_ID = "webdriver.chrome.driver"; // chromedriver 사용
 
-	//String DRIVER_PATH="/Users/jina/git/portfolio_movie/Megabox/WebContent/WEB-INF/libs/chromedriver";
-	String DRIVER_PATH = "C://Users//Moon//eclipse-workspace//portfolio_movie//portfolio_movie//Megabox//WebContent//WEB-INF//libs//chromedriver.exe";
+	
+	String DRIVER_PATH="/Users/jina/git/MegaboxClone/Megabox/WebContent/WEB-INF/libs/chromedriver";
+	//String DRIVER_PATH = "C://Users//Moon//eclipse-workspace//portfolio_movie//portfolio_movie//Megabox//WebContent//WEB-INF//libs//chromedriver.exe";
 
 	private List<MovieDTO> movieList =new ArrayList<MovieDTO>();
 	

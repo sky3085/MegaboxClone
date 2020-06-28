@@ -8,12 +8,6 @@
 	request.setCharacterEncoding("UTF-8");
 %>
 
-<!-- 
-	- 리뷰 좋아요,
-	- 최신순, 곰감순 나열,
-	- 예고편 수, 썸네일 수 
-	주석처리
- -->
 
 <c:set var="movie_title" value="${param.movietitle }" />
 <!-- movie info database -->

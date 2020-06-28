@@ -20,7 +20,7 @@ $(function(){
     
     function IsIdExist(Name, Birth, Telno){
     	$.ajax({
-			url:'/megaboxClass/IdFindDAO',
+			url:'/Megabox/IdFindDAO',
 			type:'POST',
 			dataType:'text',
 			data:{
