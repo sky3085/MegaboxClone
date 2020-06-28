@@ -24,12 +24,13 @@
         
         /*영화 검색 창 출력*/
         $(document).on("click", ".searchBtn", function(){
+        	console.log("dsadwed?");
         	$('.searchBtn_sitemap').show();
 	        $('.searchClose').show();
 	    });
         
         /*영화 검색창 닫기*/
-	    $(document).on("click", ".searchBtn", function(){
+	    $(document).on("click", ".searchClose", function(){
 	    	$('.searchBtn_sitemap').hide();
 	        $('.searchClose').hide();
 	    });

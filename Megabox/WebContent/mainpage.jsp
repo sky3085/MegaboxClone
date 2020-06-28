@@ -34,12 +34,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>라이프시어터, 메가박스</title>
 <link rel="stylesheet" href="css/main_style.css">
-
 <link rel="stylesheet" href="css/other_style.css?ver=1">
 <link rel="stylesheet" href="css/footer.css">
 <link rel="stylesheet" href="css/main_js.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="js/mainpage.js?ver=5"></script>
+<script src="js/mainpage.js"></script>
 <script src="js/include.js"></script>
 
 </head>
