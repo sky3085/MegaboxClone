@@ -1,13 +1,25 @@
 
 	$(function(){
+		var flag=0;
+		
 		/*왼쪽 상단 메뉴 출력 */
 		$(document).on("click", ".menuBtn", function(){
+			if(flag==1){
+	    		$('.menuBtn_sitemap').hide();
+		        $('.menuClose').hide();
+		    	$('.searchBtn_sitemap').hide();
+		        $('.searchClose').hide();
+		        $('.mymegaBtn_sitemap1').hide();
+		        $('.mymegaClose').hide();
+	    	}
+			flag=1;
 	        $('.menuBtn_sitemap').show();
 	        $('.menuClose').show();
 	    });
 		
 		/*왼쪽 상당 메뉴 닫기*/
 	    $(document).on("click", ".menuClose", function(){
+	    	flag=0;
 	    	$('.menuBtn_sitemap').hide();
 	        $('.menuClose').hide();
 	    });
@@ -22,8 +34,17 @@
             $('ol.movie-group.' + idx + ' .movie-post>.movie-summ').hide();
         });
         
-        /*영화 검색 창 출력*/
+        /*영화 검색 창 팝업*/
         $(document).on("click", ".searchBtn", function(){
+        	if(flag==1){
+	    		$('.menuBtn_sitemap').hide();
+		        $('.menuClose').hide();
+		    	$('.searchBtn_sitemap').hide();
+		        $('.searchClose').hide();
+		        $('.mymegaBtn_sitemap1').hide();
+		        $('.mymegaClose').hide();
+	    	}
+        	flag=1;
         	console.log("dsadwed?");
         	$('.searchBtn_sitemap').show();
 	        $('.searchClose').show();
@@ -31,18 +52,30 @@
         
         /*영화 검색창 닫기*/
 	    $(document).on("click", ".searchClose", function(){
+	    	flag=0;
 	    	$('.searchBtn_sitemap').hide();
 	        $('.searchClose').hide();
 	    });
 	    
 	    /*마이페이지 클릭시 보이는 팝업창*/
 	    $(document).on("click", ".mymegaBtn", function(){
+	    	if(flag==1){
+	    		$('.menuBtn_sitemap').hide();
+		        $('.menuClose').hide();
+		    	$('.searchBtn_sitemap').hide();
+		        $('.searchClose').hide();
+		        $('.mymegaBtn_sitemap1').hide();
+		        $('.mymegaClose').hide();
+	    	}
+	    	flag=1;
 	    	$('.mymegaBtn_sitemap1').show();
 	        $('.mymegaClose').show();
+	        
 	    });
 	    
 	    /*마이페이지 팝업창 닫기*/
 	    $(document).on("click", ".mymegaClose", function(){
+	    	flag=0;
 	        $('.mymegaBtn_sitemap1').hide();
 	        $('.mymegaClose').hide();
 	    });

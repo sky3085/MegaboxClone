@@ -13,7 +13,7 @@ li {list-style: none;}
 .sitemapMenuList > div {display: block; float: left; padding-left: 30px; margin-left: 30px; margin-top: 50px;}
 .sitemapMenuList > div p {font-size: 20px; font-weight: 500; color: #ffffff; line-height: 30px; padding: 10px 50px; border-top: 1px solid silver; border-bottom: 1px solid silver; margin-bottom: 15px;}
 .sitemapMenuList > div li a {font-size: 16px; font-weight: 300; color: #ffffff; line-height: 40px; }
-.menuClose {display: none; position: absolute; float: left; top: 50px; left: 29px; z-index: 1;} 
+.menuClose {display: none; position: absolute; float: left; top: 50px; left: 27px; z-index: 1;} 
 
 
 
