@@ -26,6 +26,14 @@ a.Crawling();
 //a.bookingSelenium();
 Click a = new Click();
 a.Crawling();
+
+/* String x ="등급 : 15세이상관람가";
+String y="개봉일 : 2020.06.24";
+System.out.println(x.substring(5, 7)+" "+y.substring(6)); */
+/*
+등급 : 15세이상관람가
+개봉일 : 2020.06.24
+*/
 %>
 
 </body>

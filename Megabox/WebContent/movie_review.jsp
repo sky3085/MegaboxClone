@@ -184,7 +184,7 @@
 										placeholder="영화에 대한 후기를 남겨주세요" rows="5" cols="50"
 										class="input-textarea"></textarea>
 									<div class="count-util"
-										style="font-size: 18px; margin-top: -5px;">
+										style="font-size: 18px; margin-top: -20px;">
 										<span id="text_count">0</span>/100
 									</div>
 
