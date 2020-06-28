@@ -54,7 +54,6 @@ public class GetDetail {
 		}
 
 		try {
-
 			/* 널값으로 생성해서 오류방지 */
 			movielist.setMovieActors("null");
 			movielist.setMovieAge("null");
@@ -72,7 +71,35 @@ public class GetDetail {
 			movielist.setMovieVideo("null");
 
 			driver.get(url);
-
+			
+			//감독, 장르, 등급, 개봉일 
+			List<WebElement> line =driver.findElements(By.cssSelector(".line p"));
+			int x=0;
+			for(WebElement e :line) {
+				String rs=e.getText().substring(0,2);
+				switch(rs) {
+				case "감독":
+					System.out.println(e.getText().substring(5));
+					movielist.setMovieDirector(e.getText().substring(5));
+					break;
+				case "장르":
+					System.out.println(e.getText().substring(5));
+					movielist.setMovieGenre(e.getText().substring(5));
+					break;
+				case "등급":
+					String rate=e.getText().substring(5, 7);
+					System.out.println(rate);
+					if (rate.equals("청소"))
+						movielist.setMovieAge("청불");
+					movielist.setMovieAge(rate);
+					break;
+				case "개봉":
+					System.out.println(e.getText().substring(6));
+					movielist.setMovieRelease(e.getText().substring(6));
+					break;
+				}
+			}
+			
 			// 제목
 			try {
 			WebElement title = driver.findElement(By.cssSelector("div.movie-detail-cont>p.title"));
@@ -84,9 +111,14 @@ public class GetDetail {
 			}
 			// 순위
 			try {
-			WebElement rate = driver.findElement(By.cssSelector("div.rate>p.cont>em"));// 순위
-			System.out.println(rate.getText());
-			movielist.setMovieRank(rate.getText());
+			String rate=String.valueOf(i);
+			movielist.setMovieRank(rate);
+			/*박스오피스 순위 실시간으로 반영을 못함. -> idx 값으로 수정 */
+			/*
+			 * WebElement rate = driver.findElement(By.cssSelector("div.rate>p.cont>em"));// 순위
+			 * System.out.println(rate.getText());
+			 * movielist.setMovieRank(rate.getText());
+			 */
 			}catch (NoSuchElementException e) {
 				System.out.println("순위 없음");
 				movielist.setMovieRank("null");
@@ -113,10 +145,6 @@ public class GetDetail {
 				movielist.setMovieSummary("null");
 			}
 			
-			
-			
-			
-			
 			// 영화타입
 			try {
 			WebElement movietype = driver.findElement(By.cssSelector("div.movie-info.infoContent>p:nth-child(1)"));// 영화타입
@@ -136,50 +164,6 @@ public class GetDetail {
 				System.out.println("배우없음");
 				movielist.setMovieActors("null");
 			}
-			
-			// 감독이 있는 경우
-			try {
-				//개봉일 
-				WebElement released = driver.findElement(By.cssSelector("div.line>p:nth-child(4)"));// 개봉일
-				System.out.println(released.getText());
-				movielist.setMovieRelease(released.getText().substring(6));
-				//감독 
-				WebElement director = driver.findElement(By.cssSelector("div.line>p:nth-child(1)"));
-				System.out.println(director.getText());
-				movielist.setMovieDirector(director.getText().substring(5));
-				//장르
-				WebElement genre = driver.findElement(By.cssSelector("div.line>p:nth-child(2)"));// 장르
-				System.out.println(genre.getText());
-				movielist.setMovieGenre(genre.getText().substring(5));
-				//등급
-				WebElement rated = driver.findElement(By.cssSelector("div.line>p:nth-child(3)"));// 등급
-				System.out.println(rated.getText());
-				// 청불일때 저장
-				if (rated.getText().substring(5, 7).equals("청소"))
-					movielist.setMovieAge("청불");
-				movielist.setMovieAge(rated.getText().substring(5, 7));
-				
-			}
-			catch (NoSuchElementException e) {
-				System.out.println("감독없음");
-				movielist.setMovieActors("null");
-				//장르 
-				WebElement genre = driver.findElement(By.cssSelector("div.line>p:nth-child(1)"));// 장르
-				System.out.println(genre.getText());
-				movielist.setMovieGenre(genre.getText().substring(5));
-				//등급
-				WebElement rated = driver.findElement(By.cssSelector("div.line>p:nth-child(2)"));// 등급
-				System.out.println(rated.getText());
-				// 청불일때 저장
-				if (rated.getText().substring(5, 7).equals("청소"))
-					movielist.setMovieAge("청불");
-				movielist.setMovieAge(rated.getText().substring(5, 7));
-				//개봉일 
-				WebElement released = driver.findElement(By.cssSelector("div.line>p:nth-child(3)"));// 개봉일
-				System.out.println(released.getText());
-				movielist.setMovieRelease(released.getText().substring(6));
-			}
-			
 			
 			// 썸네일//
 			Thread.sleep(5000);
@@ -209,7 +193,7 @@ public class GetDetail {
 			}
 			
 			// 예고편 저장
-			
+			//#contentData > div:nth-child(5) > div.tab-list.fixed > ul > li:nth-child(4) > a
 			int vidcnt = Integer.parseInt(driver
 					.findElement(By.xpath("/html/body/div[2]/div[4]/div[2]/div[2]/div/div[2]/div[1]/div/span[1]")).getText().substring(4, 5));
 			System.out.println("예고편 개수"+vidcnt);
@@ -228,13 +212,12 @@ public class GetDetail {
 				int count = 0;
 				byte[] b = new byte[1000];
 //영상 저장 주석처리 
-//				while ((count = bufferedInputStream.read(b)) != -1) {
-//					fileOutputStream.write(b, 0, count);
-//				}
+				while ((count = bufferedInputStream.read(b)) != -1) {
+					fileOutputStream.write(b, 0, count);
+				}
 				String moviePath = realpath + "/video" +  movielist.getMovieRank() + ".mp4";
 				movielist.setMovieVideo(moviePath);// 예고편 경로 저장
 			}
-
 
 			// DB저장
 			Connection conn = null;

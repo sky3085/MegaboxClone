@@ -11,29 +11,28 @@ import javax.imageio.ImageIO;
 import javax.lang.model.element.Element;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Click {
 	String DRIVER_ID = "webdriver.chrome.driver"; // chromedriver 사용
+	String DRIVER_PATH = "/Users/jina/git/MegaboxClone/Megabox/WebContent/WEB-INF/libs/chromedriver";
+	// String DRIVER_PATH =
+	// "C://Users//Moon//eclipse-workspace//portfolio_movie//portfolio_movie//Megabox//WebContent//WEB-INF//libs//chromedriver.exe";
 
-	
-	String DRIVER_PATH="/Users/jina/git/MegaboxClone/Megabox/WebContent/WEB-INF/libs/chromedriver";
-	//String DRIVER_PATH = "C://Users//Moon//eclipse-workspace//portfolio_movie//portfolio_movie//Megabox//WebContent//WEB-INF//libs//chromedriver.exe";
+	private List<MovieDTO> movieList = new ArrayList<MovieDTO>();
 
-	private List<MovieDTO> movieList =new ArrayList<MovieDTO>();
-	
-	
 	public void Crawling() {
 		System.setProperty(DRIVER_ID, DRIVER_PATH);
 
 		WebDriver driver = new ChromeDriver();
 		String base_url = "https://megabox.co.kr/movie";
+		MovieDTO movielist = new MovieDTO();
 		try {
-			
-
 			driver.get(base_url);
+
 			/*
 			WebElement toggle=driver.findElement(By.cssSelector("div.onair-condition>button"));
 			toggle.click();
@@ -77,7 +76,7 @@ public class Click {
 				GetDetail GD = new GetDetail(nextMovie, i);
 				GD.Crawling();
 			}
-			 
+
 		} catch (Exception e) {
 			e.printStackTrace();
 
@@ -85,6 +84,5 @@ public class Click {
 			driver.close();
 		}
 	}
-	
-	
+
 }
