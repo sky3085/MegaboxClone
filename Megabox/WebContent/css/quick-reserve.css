@@ -24,6 +24,13 @@ body {
     background-image: url(https://img.megabox.co.kr/static/pc/images/common/bg/bg-seat-condition-choice.png) !important;
 }
 
+.small{
+	line-height: 32px;
+    font-size: 1.2em;
+    color: rgb(34, 34, 34);
+    float: left;
+}
+
 .page-util {
     display: block;
     position: static;
@@ -42,7 +49,66 @@ body {
     height: 42px;
 }
 
-span {
+.sub{
+	line-height: 32px;
+    font-size: 0.9em;
+    font-weight: 400;
+}
+
+.button {
+    display: inline-block;
+    height: 36px;
+    text-align: center;
+    line-height: 34px;
+    color: rgb(80, 51, 150);
+    font-weight: 400;
+    font-family: NanumBarunGothic, Dotum, 돋움, sans-serif;
+    vertical-align: middle;
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+    margin: 0px;
+    padding: 0px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(80, 51, 150);
+    border-image: initial;
+}
+
+.gray-line {
+    color: rgb(68, 68, 68);
+    line-height: 36px;
+    background-color: rgb(255, 255, 255);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(193, 193, 193);
+    border-image: initial;
+}
+
+.iconset {
+    display: inline-block;
+    font-size: 0px;
+    line-height: 0;
+    vertical-align: middle;
+    overflow: hidden;
+    margin: -1px 0px 0px;
+    padding: 0px;
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+}
+
+.ico-reset-small {
+    width: 14px;
+    height: 14px;
+    background-image: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-reset-small.png);
+}
+
+.right {
+    float: right;
+}
+
+.location span {
     overflow: hidden;
     float: left;
     width: 13px;
@@ -266,25 +332,101 @@ button {
     font-family: NanumBarunGothic, Dotum, '돋움', sans-serif;
 }
 
-.seat-condition{
-	width: 18px;
+.seat-condition {
+    display: inline-block;
+    width: 18px;
     height: 18px;
+    vertical-align: middle;
+    background-color: rgb(255, 255, 255);
+    overflow: hidden;
+    margin: 0px;
+    padding: 0px;
+    border-width: 0px;
+    border-style: initial;
+    border-color: initial;
+    border-image: initial;
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+}
+
+button.seat-condition::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    z-index: 2;
+}
+
+button.seat-condition.standard::after {
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(2, 191, 211);
+    border-image: initial;
 }
 
 .choice {
+	pointer-events: none;
     background-image: url(https://img.megabox.co.kr/static/pc/images/common/bg/bg-seat-condition-choice-s.png) !important;
+    background-position: center 0px;
+    background-size : cover;
 }
 
 .finish {
-    background-image: url(https://img.megabox.co.kr/static/pc/images/common/bg/bg-seat-condition-finish-s.png) !important;
+	font-size: 0px;
+    pointer-events: none;
+    background-color: rgb(204, 204, 204) !important;
+    background-image: url(https://img.megabox.co.kr/static/pc/images/common/bg/bg-seat-condition-finish.png) !important;
+    background-position: center 0px;
+    background-size : cover;
+}
+
+.pay .money {
+    float: right;
+}
+
+.pay .tit {
+    float: left;
+    line-height: 35px;
+    font-size: .9333em;
 }
 
 .impossible {
+	pointer-events: none;
+	background-size : cover;
     background-image: url(https://img.megabox.co.kr/static/pc/images/common/bg/bg-seat-condition-impossible-s.png) !important;
 }
 
+.list em {
+    color: rgb(196, 196, 196);
+    font-size: 0.8667em;
+    letter-spacing: -1px;
+}
+
+em {
+    font-style: normal;
+}
+
+.seat-num .tit {
+    height: 43px;
+    line-height: 42px;
+    font-size: 0.8667em;
+    color: rgb(196, 196, 196);
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+.my-seat {
+    overflow: hidden;
+    padding: 0px 14px;
+}
+
+
 .common {
-    background-color: black;
+    background-color: rgb(116, 116, 116);
     background-image: url(https://img.megabox.co.kr/static/pc/images/common/bg/bg-seat-condition-common.png);
 }
 
@@ -317,7 +459,35 @@ button {
 }
 
 .theater {
-    padding-top: 10px;
+    padding-top: 10px !important;
+}
+
+.other-time .now {
+    color: rgb(255, 255, 255);
+    border-width: 1px 1px 0px;
+    border-style: solid solid solid;
+    border-color: rgb(51, 51, 51) rgb(51, 51, 51) rgb(51, 51, 51);
+    border-image: initial;
+    border-bottom: 0px;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.other-time button {
+    display: block;
+    width: 100%;
+    height: 28px;
+    font-size: 0.9333em;
+    letter-spacing: 1px;
+    text-align: left;
+    background-color: transparent;
+    font-family: Roboto;
+    font-weight: 300;
+    margin: 0px;
+    padding: 0px 0px 0px 14px;
+    border-width: 0px;
+    border-style: initial;
+    border-color: initial;
+    border-image: initial;
 }
 
 .info-area p {
@@ -334,10 +504,6 @@ button {
     border-bottom: 1px solid #434343;
 }
 
-.theater {
-    padding-top: 10px;
-}
-
 .other-time {
     position: relative;
     width: 143px;
@@ -345,12 +511,6 @@ button {
     padding: 0;
 }
 
-.now {
-    border: 1px solid #333;
-    border-bottom: 0;
-    border-radius: 5px 5px 0 0;
-    color: #fff;
-}
 
 .poster {
     position: absolute;
@@ -431,12 +591,313 @@ ol, ul {
     padding: 0;
 }
 
+.button > i:first-child {
+    margin-left: 0px;
+    margin-right: 4px;
+}
 
+.button > i {
+    margin-top: -2px;
+}
 
+a:visited {
+    color: rgb(102, 102, 102);
+    text-decoration: none;
+    outline: rgb(0, 0, 0) dotted 1px;
+}
 
+a:link {
+    color: rgb(68, 68, 68);
+    text-decoration: none;
+}
 
+.page-util .location a::before{
+    content: "";
+    display: block;
+    position: absolute;
+    left: -14px;
+    top: 0px;
+    width: 5px;
+    height: 42px;
+    background: url(https://img.megabox.co.kr/static/pc/images/common/bg/bg-location-arr.png) left center no-repeat;
+}
 
+.page-util .location a {
+    display: block;
+    position: relative;
+    float: left;
+    height: 42px;
+    line-height: 46px;
+    color: rgb(102, 102, 102);
+    margin: 0px 0px 0px 25px;
+    padding: 0px;
+}
 
+.seat-area .seat-count {
+    background-color: rgb(242, 244, 245);
+    padding: 10px 0px 10px 20px;
+    border-width: 1px 1px 0px;
+    border-style: solid solid solid;
+    border-color: rgb(216, 217, 219) rgb(216, 217, 219) rgb(216, 217, 219);
+    border-image: initial;
+    border-bottom: 0px;
+}
 
+.seat-count::after {
+    clear: both;
+    content: "";
+    display: table;
+}
 
+.seat-area .seat-count::before {
+    content: "";
+    display: table;
+}
 
+.cell {
+    float: left;
+    width: 25%;
+}
+
+.txt {
+	float: left;
+    line-height: 32px;
+    padding: 0px 10px 0px 0px;
+}
+
+.seat-count-before.off {
+    display: none;
+}
+
+button.seat-condition .num {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-size: 0.7333em;
+    line-height: 18px;
+    text-indent: 0px;
+}
+
+button, select {
+    text-transform: none;
+}
+
+.count {
+    width: 106px;
+}
+
+.count .down {
+    float: left;
+    width: 32px;
+    height: 32px;
+    font-size: 1.2em;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(204, 204, 204);
+    border-image: initial;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.count button {
+    display: block;
+    background-color: rgb(255, 255, 255);
+    font-family: Roboto, Dotum, 돋움, sans-serif;
+    font-weight: 300;
+    margin: 0px;
+    padding: 0px;
+    border-width: 0px;
+    border-style: initial;
+    border-color: initial;
+    border-image: initial;
+}
+
+.number .now {
+    width: 42px;
+    height: 32px;
+    border-style: solid;
+    border-color: rgb(204, 204, 204);
+    border-image: initial;
+    border-width: 1px 0px;
+}
+
+.count .up {
+    float: left;
+    width: 32px;
+    height: 32px;
+    font-size: 1.2em;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(204, 204, 204);
+    border-image: initial;
+    border-radius: 0px 5px 5px 0px;
+}
+
+.count .number {
+    position: relative;
+    float: left;
+    width: 42px;
+}
+
+.info-area::before {
+    content: "";
+    display: table;
+}
+
+.info-area::after {
+    clear: both;
+}
+
+.choice-seat-area::before {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 117px;
+    top: 0px;
+    width: 1px;
+    height: 100%;
+    background-color: rgb(67, 67, 67);
+}
+
+.list .seat-condition {
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
+}
+
+.seat-select-section .seat-result .wrap .choice-seat-area .seat-num .my-seat .seat {
+    display: block;
+    float: left;
+    width: 40px;
+    height: 35px;
+    line-height: 32px;
+    font-size: 0.9333em;
+    text-align: center;
+    font-family: Roboto, Dotum, 돋움, sans-serif;
+    font-weight: 300;
+    margin: 7px 0px 0px;
+    padding: 0px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(92, 92, 92);
+    border-image: initial;
+}
+
+.money em {
+    display: block;
+    float: left;
+    line-height: 35px;
+    font-size: 1.6em;
+    color: #59bec9;
+    font-family: Roboto,Dotum,'돋움',sans-serif;
+    font-weight: 400;
+}
+
+.money span {
+    display: block;
+    float: left;
+    padding: 0 0 0 5px;
+    line-height: 35px;
+}
+
+.btn-group .button {
+    display: block;
+    float: left;
+    width: 50%;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    font-size: 1.2em;
+    line-height: 40px;
+    color: #fff!important;
+    border: 0;
+    border-radius: 0;
+    background-color: #53565b;
+}
+
+.active{
+	border-left: 2px solid #6a6a6c !important;
+}
+
+.alert-popup p {
+    margin: 0;
+    padding: 0
+}
+
+.alert-popup .wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 15px 20px 0 0;
+}
+
+.alert-popup .layer-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 45px;
+    background: #513397
+}
+
+.layer-header h3.tit {
+    color: #fff;
+    line-height: 45px;
+    padding: 0 20px;
+    font-size: 1.2em
+}
+
+.alert-popup .layer-con {
+    overflow-y: auto;
+    height: auto !important;
+    max-height: 400px;
+    background-color: #fff;
+    padding: 20px
+}
+
+.layer-con .txt-common {
+    margin: 0;
+    padding: 0;
+    text-align: left
+}
+
+.layer-con .txt-common.scroll {
+    overflow-y: auto;
+    max-height: 250px
+}
+
+.layer-con .btn-group {
+	position : relative;
+    padding: 15px 0 20px 0;
+    display: flex;
+}
+
+.lyclose{
+	border-right: 2px solid !important;
+}
+
+.btn-group-a{
+	margin: 20px 0 20px 0;
+    display: grid;
+}
+
+.alert-popup .btn-layer-close {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    width: 16px;
+    height: 15px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    text-indent: -9999px;
+    background: url(https://img.megabox.co.kr/static/pc/images/common/btn/btn-layer-close.png) no-repeat center
+}
+
+.wrap .layer-con {
+    overflow-y: auto;
+    background-color: #fff;
+    padding: 40px 20px 0 20px;
+}

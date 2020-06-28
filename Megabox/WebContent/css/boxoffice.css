@@ -54,30 +54,29 @@ input::placeholder {
 }
 
 .movie-list {
-    margin-top: 10px;
-    margin-left: -28px;
-    width: 1125px;
+    position : relative;
 }
 
 #inner-wrap {
 	width: 1100px;
 	margin: 0 auto;
-	height: 42px;
-	clear: both;
+	height: 46px;
 	margin-left: 210px;
-	position: absolute;
+	position: relative;
 	line-height: 1;
 }
 
 .location {
 	display: block;
 	float: left;
-	height: 42px;
+	height: 46px;
 	margin: 0;
 	padding: 0;
 	line-height: 46px;
 	color: #666;
+	clear: both;
 	text-decoration: none;
+	bottom: 12px;
 	position: relative;
 }
 
@@ -110,6 +109,7 @@ a::after {
 }
 
 span.location {
+	top: 0.1px;
 	overflow: hidden;
 	display: block;
 	float: left;
@@ -126,7 +126,7 @@ span.location {
 .movie-group {
     display: inline-block;
     box-sizing: border-box;
-    margin-left: 28.5px;
+    margin-right: 28.5px;
     margin-bottom: 80px;
 }
 

@@ -54,7 +54,7 @@
             <strong>안녕하세요.</strong>
             <span>회원정보를 입력해주세요.</span>
         </p>
-        <form method="POST" action="regist_ok.jsp" onsubmit="return member()">
+        <form method="POST" action="regist_ok" onsubmit="return member()">
             <table id="member_table1">
                 <caption>
                     	생년월일, 휴대폰번호, 아이디, 비밀번호, 비밀번호 확인, 이메일 주소, 무인발권기 기능설정

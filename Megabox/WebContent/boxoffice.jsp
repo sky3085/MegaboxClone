@@ -263,7 +263,7 @@
 
 
 
-			<button type="button" class="show-more">더보기</button>
+			<!-- <button type="button" class="show-more">더보기</button> -->
 		</section>
 	</div>
 

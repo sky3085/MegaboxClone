@@ -76,62 +76,7 @@
         <div class="container">
             <input type="hidden" id="playSchdlNo" name="playSchdlNo" value="2003301372070">
             <input type="hidden" id="brchNo" name="brchNo" value="1372">
-            <section id="layer_age_alert" class="modal-layer" style="z-index: 900"><a href="" class="focus">레이어로 포커스 이동
-                    됨</a>
-
-
-                <!-- 팝업-->
-
-                <div class="wrap"
-                    style="width: 500px; height: 350px; margin-left: -250px; margin-top: 0px; top: 140px;">
-                    <header class="layer-header">
-                        <h3 class="tit">알림</h3>
-                    </header>
-                    <div class="layer-con">
-                        <div class="alert-age-layer age12">
-                            <div class="age-box age-12">
-                                <div class="left">
-                                    <p class="circle">12</p>
-                                </div>
-
-
-                                <div class="right">
-                                    <p class="tit">12세이상관람가</p>
-                                    <p class="txt">
-                                        <p>[12세 이상 관람가]<br><br>만 12 세 미만의 고객님은(영,유아 포함) 반드시 부모님 또는<br> 성인 보호자의 동반하에 관람이
-                                            가능합니다.<br>연령 확인 불가 시 입장이 제한될 수 있습니다.
-                                        </p>
-                                    </p>
-                                </div>
-
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="btn-group-fixed">
-                        <button type="button" class="button purple close-layer">확인</button>
-                    </div>
-                    <button type="button" class="btn-modal-close">레이어 닫기</button>
-                </div>
-                <!-- 팝업-->
-
-
-
-                <!--팝업-->
-                <div class="wrap">
-                    <header class="layer-header">
-                        <h3 class="tit">알림</h3>
-                    </header>
-                    <div class="layer-con" style="height: 200px;">
-                        <p class="txt-common">관람하실 인원을 먼저 선택해주세요.</p>
-                        <div class="btn-group"><button type="button" class="button lyclose"
-                                style="display: none;"></button><button type="button"
-                                class="button purple confirm">확인</button></div>
-                    </div><button type="button" class="btn-layer-close">레이어 닫기</button>
-                </div>
-                <!--팝업-->
-            </section>
-
+        
 
             <div class="inner-wrap" style="padding-top:40px; padding-bottom:100px;">
                 <div class="quick-reserve">
@@ -309,7 +254,7 @@
                         <div class="seat-result">
                      <div class="wrap">
                         <div class="tit-area" style="padding : 0 display: block; position: relative; float: left;">
-                           <span class="movie-graseat-resultde small age-all age-12" style="display: block; text-align: left;">${age } 관람가</span>
+                           <span class="movie-graseat-resultde age-all age-12" style="display: block; text-align: left;">${age } 관람가</span>
                            <p class="tit" style="text-align:left;">${title }</p>
                            <p class="cate" style="text-align:left;">${category }</p>
                         </div>
@@ -346,16 +291,16 @@
                                     <div class="seat-condition common" title="일반"></div> <em>
                                        일반</em>
                                  </li>
-                                 <li>
+                                 <!-- <li>
                                     <div class="seat-condition disabled" title="장애인석"></div> <em>
                                        장애인석</em>
-                                 </li>
+                                 </li> -->
                               </ul>
                            </div>
                            <div class="seat-num">
                               <p class="tit">선택좌석</p>
                               <div class="my-seat">
-                                 <div class="seat choice" title="선택한 좌석">-</div>
+                                 <div class="seat all" title="선택한 좌석">-</div>
                                  <div class="seat all" title="구매가능 좌석">-</div>
                                  <div class="seat all" title="구매가능 좌석">-</div>
                                  <div class="seat all" title="구매가능 좌석">-</div>
@@ -391,7 +336,7 @@
 
          <!-- 초기화 알람창 팝업-->
          <section class="alert-popup"
-            style="display: none; position: fixed; padding-top: 45px; background: rgb(255, 255, 255); z-index: 5006; top: 289px; left: 405px; width: 400px; opacity: 1;"
+            style="display: none; position: fixed; background: rgb(255, 255, 255); z-index: 5006; top: 289px; left: 405px; width: 400px; opacity: 1;"
             id="layerId_030983947233653875">
             <div class="wrap">
                <header class="layer-header">
@@ -411,7 +356,7 @@
 
          <!--인원초과 알람창 팝업-->
          <section class="alert-popup"
-            style="display: none; position: fixed; padding-top: 45px; background: rgb(255, 255, 255); z-index: 5006; top: 289px; left: 400px; width: 300px; opacity: 1;"
+            style="display: none; position: fixed; background: rgb(255, 255, 255); z-index: 5006; top: 289px; left: 400px; width: 300px; opacity: 1;"
             id="layerId_08010659137218192">
             <div class="wrap">
                <header class="layer-header">
@@ -419,13 +364,10 @@
                </header>
                <div class="layer-con" style="height: 200px;">
                   <p class="txt-common">좌석 선택이 완료되었습니다.</p>
-                  <div class="btn-group">
-                     <button type="button" class="button lyclose"
-                        style="display: none;"></button>
-                     <button type="button" class="button purple confirm">확인</button>
+                  <div class="btn-group-a btn-group">
+                     <button type="button" class="button purple confirm" style="width: 250px;">확인</button>
                   </div>
                </div>
-               <button type="button" class="btn-layer-close">레이어 닫기</button>
             </div>
 
          </section>
