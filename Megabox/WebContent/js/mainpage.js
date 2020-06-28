@@ -1,7 +1,7 @@
 
 	$(function(){
+		//팝업창 유무 확인 변수
 		var flag=0;
-		
 		/*왼쪽 상단 메뉴 출력 */
 		$(document).on("click", ".menuBtn", function(){
 			if(flag==1){
