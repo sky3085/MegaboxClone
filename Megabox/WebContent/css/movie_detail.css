@@ -380,6 +380,13 @@ border-radius: 8px;
     width: 50px;
     float: left;
 }
+.user-wrapper>p{
+	position:relative;
+	left:-5px;
+
+	
+}
+
 .user {
     text-align: center;
     color: #4D4D4D;
