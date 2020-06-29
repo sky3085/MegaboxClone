@@ -45,7 +45,6 @@
 		        $('.mymegaClose').hide();
 	    	}
         	flag=1;
-        	console.log("dsadwed?");
         	$('.searchBtn_sitemap').show();
 	        $('.searchClose').show();
 	    });
