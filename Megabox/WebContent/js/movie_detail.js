@@ -107,40 +107,45 @@ $(window).scroll(function() {
 
 /*리뷰 작성 시간 계산 */
 $(function(){
-	var dateArr= $(".wrote-date").text().split(" ");//dateArr[0]:날짜 저장 dateArr[1]:시간 저장 
-	var wdate=dateArr[0].split("-");/*년,월,일 */ var wtime=dateArr[1].split(":");//시,분,초 
-	var d= new Date();
-	//리뷰 작성된 날짜, 시간 
-	var wyear=wdate[0]; var wmonth=wdate[1]; var wday=wdate[2]; var whour=wtime[0]; var wminute=wtime[1];
-	//현재 시간 
-	var cyear=d.getFullYear(); var cmonth=(d.getMonth()+1)>9 ? ''+(d.getMonth()+1) : '0'+(d.getMonth()+1); var cday=d.getDate()>9 ? ''+d.getDate() : '0'+d.getDate(); var chour=d.getHours(); var cminute=d.getMinutes();
 	
-	
-	console.log("sadwed");
-	var hour=Math.abs(whour-chour);
-	/* $(".wrote-date").text(hour); */
-	
-	if(wyear==cyear&&wmonth==cmonth&&wday==cday){
-		//작성시간 분 이내  
-		if(whour==chour){
-		var minute=Math.abs(wminute-cminute);
-		$(".wrote-date").text(minute+" 분 전");
-		}
-		//작성시간 시 이내 
+	var ReviewCnt =$(".ContentTag").length+2; //4
+	for(var i=ReviewCnt;i>2;i--){
+		var dateArr= $("li:nth-child("+i+") > div.wrote-date").text().split(" ");//dateArr[0]:날짜 저장 dateArr[1]:시간 저장
+		console.log(dateArr);
+		var wdate=dateArr[0].split("-");/*년,월,일 */ var wtime=dateArr[1].split(":");//시,분,초 
+		var d= new Date();
+		//리뷰 작성된 날짜, 시간 
+		var wyear=wdate[0]; var wmonth=wdate[1]; var wday=wdate[2]; var whour=wtime[0]; var wminute=wtime[1];
+		//현재 시간 
+		var cyear=d.getFullYear(); var cmonth=(d.getMonth()+1)>9 ? ''+(d.getMonth()+1) : '0'+(d.getMonth()+1); var cday=d.getDate()>9 ? ''+d.getDate() : '0'+d.getDate(); var chour=d.getHours(); var cminute=d.getMinutes();
+		
+
+		console.log(wyear+" "+wmonth+" "+wday);
 		var hour=Math.abs(whour-chour);
-		$(".wrote-date").text(hour);
-		console.log(Math.abs(whour-chour));
-		console.log("오늘 작성됨");
+		
+		if(wyear==cyear&&wmonth==cmonth&&wday==cday){
+			//작성시간 분 이내  
+			if(whour==chour){
+			var minute=Math.abs(wminute-cminute);
+			$("li:nth-child("+i+") > div.wrote-date").text(minute+" 분 전");
+			}
+			else{
+			//작성시간 시 이내 
+			var hour=Math.abs(whour-chour);
+			$("li:nth-child("+i+") > div.wrote-date").text(hour);
+			}
+		}
+			//작성날짜 일주일 이내 
+		else if(wyear==cyear&&wmonth==cmonth&&(Math.abs(wday-cday)<=7)){
+			var day=Math.abs(wday-cday);
+			$("li:nth-child("+i+") > div.wrote-date").text(day+" 일 전");
+		}
+			//작성날짜 그 이외 
+		else{
+			$("li:nth-child("+i+") > div.wrote-date").text(wyear+"."+wmonth+"."+wday);
+		}
 	}
-		//작성날짜 일주일 이내 
-	else if(wyear==cyear&&wmonth==cmonth&&(Math.abs(wday-cday)<=7)){
-		var day=Math.abs(wday-cday);
-		$(".wrote-date").text(day+" 일 전");
-	}
-		//작성날짜 그 이외 
-	else{
-		$(".wrote-date").text(wyear+"."+wmonth+"."+wday);
-	}
+
 })
 
 
@@ -154,13 +159,13 @@ $(function() {
 	/* 리뷰팝업 */
 	$('.writeBtn').click(function() {
 		/*로그인 여부 확인 */
-//		var check=$(this).attr('user-id');
-//		if(!check){
-//			console.log("로그인 안되어있음");
-//			console.log(check);
-//			alert("로그인을 해주세요.");
-//			return false;
-//		}
+		var check=$(this).attr('user-id');
+		if(!check){
+			console.log("로그인 안되어있음");
+			console.log(check);
+			alert("로그인을 해주세요.");
+			return false;
+		}
 		/*리뷰작성 여부 확인*/
 		var check_wrote=$(this).attr('check_wrote');
 		if(check_wrote>=1){

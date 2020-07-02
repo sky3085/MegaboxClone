@@ -74,7 +74,6 @@ public class GetDetail {
 			
 			//감독, 장르, 등급, 개봉일 
 			List<WebElement> line =driver.findElements(By.cssSelector(".line p"));
-			int x=0;
 			for(WebElement e :line) {
 				String rs=e.getText().substring(0,2);
 				switch(rs) {

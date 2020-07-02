@@ -73,6 +73,9 @@ $(function () {
     });
 });
 
+
+
+
 var adult = Number(0);
 var children = Number(0);
 var disabled= Number(0); //우대 
@@ -82,6 +85,11 @@ var seatCnt = Number(0); //선택된 좌석 수 카운트
 
 function SeatRowChange(total) {
     //짝수 홀수 좌석 라인 변경
+	/*
+	 * impossible -> 1명 인원선택때 블락되는 좌서 
+	 * selected -> 구매할 좌석 보라색으로 변경되는 클래스 
+	 * finish -> 이미 예매된 좌석
+	 */
     if (total == 1) {
         for (var i = 0; i < 20; i++) {
             $("button[seatno=" + (2 * i + 1) + "]").addClass("seat-condition impossible");
@@ -208,6 +216,8 @@ $(function () {
         SeatReset();
     });
 })
+
+
 /* 인원 증감 */
 $(function () {
     $("button.up").click(function () {
@@ -215,14 +225,19 @@ $(function () {
             alert("인원은 8명까지 선택 가능합니다.");
             return false;
         }
+        // 인원을 증가시키는 함
         PlusPeople($(this).attr("id"));
+        //인원, 가격 정보 어ㅏㅂ데이트 
         total = Number(adult + children + disabled);
         price = Number(adult * 11000 + children * 9000 + disabled* 5000);
+        //선택좌석 css 변경하는 코드 
         $('.my-seat').children().eq((total - 1)).css("background-color", "#54565B").text("-");
+        //홀수 짝수에따라서 좌석 블락되는 코드 
         SeatRowChange(total);
     });
     $("button.down").click(function () {
         var kind = $(this).attr("id");
+        //함수호출 
         MinusPepole(kind);
         total = Number(adult + children + disabled);
         price = Number(adult * 11000 + children * 9000 + disabled* 5000);
@@ -302,12 +317,14 @@ $(function () {
     $("button.jq-tooltip").on({
         mouseover: function () {
             seatCnt = $("button[selected='selected']").length; //선택된 좌석의 수
-       
+            //선택 인원이 1명 일때 
             if (total === 1) {
                 if (!IsImpossible($(this)))
                     $(this).addClass("seat-condition on");
             }
+            //선택 인원이 2명이상 일때 
             if (total >= 2) {
+            	// 5명 -> 2명 -> 2명 -> 1명
                 if ((total - seatCnt) === 1) {
                     if (!IsImpossible($(this)))
                         $(this).addClass("seat-condition on");
@@ -340,7 +357,10 @@ $(function () {
                 DeleteSelected($(this));
                 UpdateSeatInfo();
             }
+            //선택한 좌석의 수 
             seatCnt = $("button[selected='selected']").length;
+            
+            //5명 ->2명 -> 2명 ->1명 
             if (total === 1 || total - seatCnt === 1) {
                 if(IsOverTotal(total, seatCnt))return false; //초과인원 선택했는지? 
                 if(IsFinishSeat($(this)))return false;

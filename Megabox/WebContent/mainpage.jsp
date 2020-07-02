@@ -112,6 +112,7 @@
 								<c:set var="images" value="${movie.movie_img}" />
 								<c:set var="poster" value="${fn:split(images,',')[0]} " />
 								<c:set var="title" value="${movie.movie_title}" />
+								<c:set var="movie_score" value="${movie.movie_score }"/>
 								<!-- 영화 제목 -->
 								<ol class="movie-group ${movie.movie_rank }" id="test">
 									<a href="movie_detail.jsp?movietitle=${title }">
@@ -123,8 +124,12 @@
 													style="font: Light Oblique s35px/42px Helvetica; font-size: 35px; color: white; position: absolute; padding: 20px; font-style: italic;">
 													${movie.movie_rank }</p>
 
-												<div class="movie-summ" style="line-height: 25px;">
-													<div style="height: 300px; overflow: hidden;">${movie.movie_summary }</div>
+												<div class="movie-summ" style="line-height: 25px; ">
+													<div class="movie-summary">${movie.movie_summary }</div>
+													<div class="movie-score">평점 : ${movie_score }</div>
+													
+	
+													
 												</div>
 											</div>
 
@@ -134,14 +139,8 @@
 													//로그인 중
 												if (session.getAttribute("loginid") != null) {
 												%>
-												<%-- <sql:query dataSource="${db}" var="like">  
-												SELECT like_boolean from movie_like where like_title = '${movie.movie_title}' and like_member = '<%=session.getAttribute("loginid") %>';  
-											</sql:query> --%>
 												<button type="button" class="heart btn click"
 													style="float: left; width: 37%;">
-													<%-- 
-												//<c:forEach var="idCheck" items="${like }">
-												//<%if(session.getAttribute("loginid") == ${idCheck ) %> --%>
 													<%
 														LikeDAO likeDAO = new LikeDAO();
 													boolean ck = likeDAO.selectMovieLike((String) pageContext.getAttribute("title"),
@@ -162,7 +161,6 @@
 													<%
 														}
 													%>
-													<%-- </c:forEach> --%>
 												</button>
 												<%
 													} else {//로그아웃
