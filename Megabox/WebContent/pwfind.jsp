@@ -66,7 +66,7 @@
 				<p class="tit-member">아이디/비밀번호 찾기</p>
 				<div class="tab-list">
 					<ul>
-						<li class="tab-id"><a href="idfind.jsp" title="아이디 찾기">아이디
+						<li class="tab-id" style="left: 4px;"><a href="idfind.jsp" title="아이디 찾기">아이디
 								찾기</a></li>
 						<li class="tab-pw"><a href="pwfind.jsp" title="비밀번호 찾기">비밀번호
 								찾기</a></li>

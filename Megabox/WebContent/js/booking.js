@@ -1,4 +1,5 @@
 $(function() {
+	//영화 목록 관람가 이미지
 	for (var i = 0; i<$("span.movie-grade").length; i++) {
 		if ($("span.movie-grade").eq(i).text() == '전체') {
 			$("span.movie-grade").eq(i).css("background-image",
@@ -20,8 +21,6 @@ $(function() {
 });
      	
         $(function(){
-        	
-
             // 시간 한시간씩 왼쪽으로
             $("button.btn-prev-time").click(function() {
                 var check = $("div.view").css("left");
@@ -36,7 +35,6 @@ $(function() {
                     $("div.view").css({"left" : check[0]});
                 }
             });
-
 
             //시간 한시간씩 오른쪽으로
             $("button.btn-next-time").click(function() {
@@ -65,6 +63,7 @@ $(function() {
                 listChange();
             });
             
+            //시간 클릭시 css 변경
             $("button.hour").click(function(){
                 $("button.hour").removeClass("time-on");
                 $(this).addClass("time-on");
@@ -92,7 +91,6 @@ $(function() {
                     var check2 = $("button.check1").length;
                     console.log(check2);
                     if(check2 == 2){
-                    	console.log("머지");
                         $("#bg-m3").empty();
                         $("#bg-m2").empty();
                         $("#bg-m1").empty();
@@ -112,7 +110,6 @@ $(function() {
                         	}
                         }
                         listChange();
-                        
                     }else if(check2 == 1){
                         $("#bg-m2").empty();
                         $("#bg-m1").empty();
@@ -295,7 +292,7 @@ $(function() {
             	//var location = new Array();
             	//var location = $("button.check2").text();
             	var time = $("button.time-on").text();
-            	console.log(time);
+            	//console.log(time);
             	var listInfo = {"date":date, "time":time}
             	for(var i=0; i<$("button.check1").length; i++){
             		var sub = $("button.check1").eq(i).text().split('\n')[5].trim();

@@ -144,6 +144,7 @@
                 </div>
                 <div class="quick-reserve-area">
                     <div class="movie-choice">
+                    <!--영화리스트   -->
                         <p class="tit">영화</p>
                         <div class="list-area">
                             <div class="all-list">
@@ -157,6 +158,7 @@
                                             <li style="height:100%;">
                                                 <button type="button" class="btn-booking">
                                                     <span class="movie-grade">${movieDTO.movieAge}</span>
+                                                    <!--좋아요 버튼  -->
                                                     <%
 													LikeDAO likeDAO = new LikeDAO();
 													boolean ck = likeDAO.selectMovieLike((String)pageContext.getAttribute("title"), (String)session.getAttribute("loginid"));
@@ -176,6 +178,7 @@
                                 </div>
                             </div>
                         </div>
+                        <!--선택된 영화 포스터 출력 부분  -->
                         <div class="view-area">
                             <div class="choice-all" id="choiceMoiveNone" style="display: block;">
                                 <strong>모든영화</strong>
@@ -189,6 +192,7 @@
                             </div>
                         </div>
                     </div>
+                    <!--극장 리스트  -->
                     <div class="theater-choice">
                         <div class="tit-area">
                             <p class="tit">극장</p>
@@ -200,6 +204,7 @@
                                 <div class="list">
                                     <div class="scroll">
                                         <ul>
+                                        <!--상영관 목록 가져오기  -->
                                         	<sql:query dataSource="${db}" var="location">  
 												SELECT DISTINCT cinema_location from mega_cinema; 
 											</sql:query>
@@ -226,6 +231,7 @@
                                 </div>
                             </div>
                         </div>
+                        <!--선택한 극장 리스트  -->
                         <div class="view-area">
                             <div class="choice-all" id="choiceBrchNone" style="display: block;">
                                 <strong>전체극장</strong>
