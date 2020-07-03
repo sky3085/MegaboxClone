@@ -21,7 +21,7 @@ body {
 .on {
     background-color: #503396 !important;
     background-position: right 0 !important;
-    background-image: url(https://img.megabox.co.kr/static/pc/images/common/bg/bg-seat-condition-choice.png) !important;
+    background-image: url(../image/bg-seat-condition-choice.png) !important;
 }
 
 .small{
@@ -101,7 +101,7 @@ body {
 .ico-reset-small {
     width: 14px;
     height: 14px;
-    background-image: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-reset-small.png);
+    background-image: url(../image/ico-reset-small.png);
 }
 
 .right {
@@ -116,7 +116,7 @@ body {
     margin: 0;
     padding: 0;
     text-indent: -9999px;
-    background: url(https://img.megabox.co.kr/static/pc/images/common/bg/bg-location-home.png) no-repeat center;
+    background: url(../image/bg-location-home.png) no-repeat center;
 }
 
 .container {
@@ -269,7 +269,7 @@ h2.tit {
     color: #fff;
     font-size: 1.2em;
     text-align: center;
-    background: rgba(0, 0, 0, .6) url(https://img.megabox.co.kr/static/pc/images/reserve/bg-seat-count-before.png) no-repeat center 11px;
+    background: rgba(0, 0, 0, .6) url(../image/bg-seat-count-before.png) no-repeat center 11px;
 }
 
 .scroll {
@@ -369,7 +369,7 @@ button.seat-condition.standard::after {
 
 .choice {
 	pointer-events: none;
-    background-image: url(https://img.megabox.co.kr/static/pc/images/common/bg/bg-seat-condition-choice-s.png) !important;
+    background-image: url(../image/bg-seat-condition-choice-s.png) !important;
     background-position: center 0px;
     background-size : cover;
 }
@@ -378,7 +378,7 @@ button.seat-condition.standard::after {
 	font-size: 0px;
     pointer-events: none;
     background-color: rgb(204, 204, 204) !important;
-    background-image: url(https://img.megabox.co.kr/static/pc/images/common/bg/bg-seat-condition-finish.png) !important;
+    background-image: url(../image/bg-seat-condition-finish.png) !important;
     background-position: center 0px;
     background-size : cover;
 }
@@ -396,7 +396,7 @@ button.seat-condition.standard::after {
 .impossible {
 	pointer-events: none;
 	background-size : cover;
-    background-image: url(https://img.megabox.co.kr/static/pc/images/common/bg/bg-seat-condition-impossible-s.png) !important;
+    background-image: url(../image/bg-seat-condition-impossible-s.png) !important;
 }
 
 .list em {
@@ -427,13 +427,13 @@ em {
 
 .common {
     background-color: rgb(116, 116, 116);
-    background-image: url(https://img.megabox.co.kr/static/pc/images/common/bg/bg-seat-condition-common.png);
+    background-image: url(../image/bg-seat-condition-common.png);
 }
 
 .seat-condition.disabled {
     background-color: #328619;
     background-position: center 0;
-    background-image: url(https://img.megabox.co.kr/static/pc/images/common/bg/bg-seat-condition-disabled.png);
+    background-image: url(../image/bg-seat-condition-disabled.png);
 }
 
 .wrap {
@@ -519,7 +519,7 @@ em {
     width: 70px;
     height: 100px;
     padding: 0;
-    background: url(https://img.megabox.co.kr/static/pc/images/reserve/bg-seat-result-poster.png) no-repeat 0 0;
+    background: url(../image/bg-seat-result-poster.png) no-repeat 0 0;
 }
 
 .poster img {
@@ -619,7 +619,7 @@ a:link {
     top: 0px;
     width: 5px;
     height: 42px;
-    background: url(https://img.megabox.co.kr/static/pc/images/common/bg/bg-location-arr.png) left center no-repeat;
+    background: url(../image/bg-location-arr.png) left center no-repeat;
 }
 
 .page-util .location a {
@@ -893,7 +893,7 @@ button, select {
     padding: 0;
     border: 0;
     text-indent: -9999px;
-    background: url(https://img.megabox.co.kr/static/pc/images/common/btn/btn-layer-close.png) no-repeat center
+    background: url(../image/btn-layer-close.png) no-repeat center
 }
 
 .wrap .layer-con {

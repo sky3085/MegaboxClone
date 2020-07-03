@@ -140,17 +140,7 @@
 			</div>
 			<div class="movie-list">
 				<ol style="width: 1125px">
-
-
-
-
-
-
-
 					<!-- 박스오피스 순위 -->
-
-
-
 					<c:forEach var="movie" items="${rs.rows}" varStatus="status">
 						<c:set var="images" value="${movie.movie_img}" />
 						<c:set var="poster" value="${fn:split(images,',')[0]} " />

@@ -59,6 +59,9 @@
 	            </div>
 	
 	            <div class="modify">
+	            
+	            
+	            <form method="post" name="loginMember" action="userinfoChange">
 	                <div class="modify-notice">
 	                    <h2 class="title-main">개인정보 수정</h2>
 	                    <ul>
@@ -77,9 +80,9 @@
 	                                <th scope="row">프로필 사진</th>
 	                                <td>
 	                                    <div class="profile-photo">
-	                                        <form name="fileForm">
+	                                        
 	                                            <input type="file" id="profileTarget" name="file" style="display: none;">
-	                                        </form>
+	                                        
 	                                        <div class="profile-img">
 	                                            <img src="image/bg-profile.png" alt="프로필 사진 샘플">
 	                                        </div>
@@ -90,16 +93,17 @@
 	                            </tr>
 	                            <tr>
 	                                <th scope="row">아이디</th>
-	                                <td>${sessionScope.loginid}</td>
+	                                <td><input type="text" class="loginUser" name="userid" id="userid" maxlength="12" placeholder="${sessionScope.loginid}"></td>
 	                            </tr>
 	                        </tbody>
 	                    </table>
 	                </div>
 	
 	                <div class="info_sub">
+	                	<c:forEach var="mega_member" items="${memberDb_rs.rows }">
 	                    <h3 class="title-sub">기본정보</h3>
 	                        <p class="right"><em class="font-orange">* </em>필수</p>
-	                    </h3>
+	                   
 	                    <table class="board-form">
 	                        <colgroup>
 	                            <col style="width:180px;">
@@ -111,10 +115,10 @@
 	                                    이름 <em class="font-orange">*</em>
 	                                </th>
 	                                <td>
-	                                	<c:forEach var="mega_member" items="${memberDb_rs.rows }">
-	                                    <span class="mbNmClass"><c:out value="${mega_member.mem_name}"/></span>
-	                                    </c:forEach>
-	                                    <button type="button" class="button small gray-line change-name" id="usernameChgBtn" title="이름 변경">이름 변경</button>
+	                                	
+	                                    <span class="mbNmClass"><input type="text" class="loginUser" name="username" placeholder="${mega_member.mem_name}"></span>
+	                                    
+	                                    
 	                                    ※ 개명으로 이름이 변경된 경우, 회원정보의 이름을 변경하실 수 있습니다.
 	                                </td>
 	                            </tr>
@@ -123,9 +127,9 @@
 	                                    생년월일 <em class="font-orange">*</em>
 	                                </th>
 	                                <td>
-	                                    <c:forEach var="mega_member" items="${memberDb_rs.rows }">
-	                                    	<c:out value="${mega_member.mem_birth}"/>
-	                                    </c:forEach>
+	                                    
+	                                    	<input type="text" class="loginUser" name="ssn1" maxlength="6" placeholder="${mega_member.mem_birth}">
+	                                    	
 	                                </td>
 	                            </tr>
 	                            <tr>
@@ -134,14 +138,9 @@
 	                                </th>
 	                                <td>
 	                                    <div class="clearfix">
-	                                    	<c:forEach var="mega_member" items="${memberDb_rs.rows }">
-	                                        <p class="reset float-l w170px lh32 changeVal" data-name="phoneNo">
-	                                            <c:out value="${mega_member.mem_hp}"/>
-	                                        </p>
-	                                        </c:forEach>
-	                                        <div class="float-l">
-	                                            <button type="button" class="button small gray-line change-phone-num" id="phoneChgBtn" title="휴대폰번호 변경">휴대폰번호 변경</button>
-	                                        </div>
+	                                    	
+	                                        <input type="text" class="loginUser" name="hp" placeholder="${mega_member.mem_hp}"">
+	                                        
 	                                    </div>
 	                                </td>
 	                            </tr>
@@ -150,18 +149,16 @@
 	                                    <label for="email">이메일</label> <em class="font-orange">*</em>
 	                                </th>
 	                                <td>
-	                                    <input type="text" id="email" name="mbEmail" class="input-text w500px" value="<c:forEach var="mega_member" items="${memberDb_rs.rows }"><c:out value="${mega_member.mem_email}"/></c:forEach>">
+	                                    <input type="text" id="email" name="email" class="loginUser input-text w500px" value="<c:forEach var="mega_member" items="${memberDb_rs.rows }"><c:out value="${mega_member.mem_email}"/></c:forEach>">
 	                                </td>
 	                            </tr>
 	                            <tr>
 	                                <th scope="row">비밀번호 <em class="font-orange">*</em></th>
 	                                <td>
-	                                    <button type="button" class="button small gray-line change-userpw" id="pwChgBtn" title="비밀번호 변경"><a href="#" title="비밀번호 변경페이지로 이동">비밀번호 변경</a></button>
-	  
-	                                    마지막 비밀번호 변경: 2289일전에 함 (2013-12-26 16:57:12)
+	                                    <input type="password" class="loginUser" name="userpw" id="userpw" maxlength="16" placeholder="  ">
 	                                </td>
 	                            </tr>
-	                            <tr>
+	                            <%-- <tr>
 	                                <th scope="row">주소</th>
 	                                <td>
 	                                    <span>  </span>
@@ -170,14 +167,16 @@
 	                                    <p class="reset mt10"><c:out value="${mega_member.mem_address}"/></p>
 	                                    </c:forEach>
 	                                </td>
-	                            </tr>
+	                            </tr> --%>
 	                        </tbody>
 	                    </table>
+	                    </c:forEach>
 	                </div>
 	                <div class="btn-group">
 	                    <a href="mypagemain.jsp" class="button large" id="cancelBtn" title="취소">취소</a>
-	                    <a href="#" class="button large purple" id="ckBtn" data-url="/mypage/userinfo" title="등록">등록</a>
+	                    <input type="submit" class="button large purple" id="ckBtn" value="등록">
 	                </div>
+	                </form>
 	            </div>
 	            
 	            <div class="modify_popup">

@@ -34,6 +34,7 @@
 							<li><a href="#"><img src="image/ico-search_b.png"
 									alt="검색" class="searchBtn"><img
                                     src="image/btn-header-layer-close.png" class="searchClose"></a></li>
+							
 							<li><a href="boxoffice.jsp"><img
 									src="image/gnb-txt-movie.png"></a></li>
 							<li><a href="booking.jsp"><img

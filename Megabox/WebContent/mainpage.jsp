@@ -127,9 +127,7 @@
 												<div class="movie-summ" style="line-height: 25px; ">
 													<div class="movie-summary">${movie.movie_summary }</div>
 													<div class="movie-score">평점 : ${movie_score }</div>
-													
-	
-													
+									
 												</div>
 											</div>
 

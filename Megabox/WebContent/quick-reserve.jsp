@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
     <link rel="shortcut icon" />
     <title>빠른예매 &lt; 예매 | 라이프씨어터, 메가박스</title>
-    <link rel="stylesheet" href="css/boxoffice.css">
+    <link rel="stylesheet" href="css/quick-reserve.css">
 <link rel="stylesheet" href="css/other_style.css">
 <link rel="stylesheet" href="css/main_js.css">
 <link rel="stylesheet" href="css/footer.css">

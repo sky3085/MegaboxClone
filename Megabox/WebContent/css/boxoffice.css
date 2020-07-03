@@ -239,9 +239,8 @@ span.location {
     /* border-top: 3px solid white; */
     text-align: center;
     padding-top: 40px;
-    /* font-size: 2em; */
-     font-size: 16px;
-     color:#329eb1;
+    font-size: 2em;
+    color:#329eb1;
     font-weight: bold;
 }
 /* 메뉴 */

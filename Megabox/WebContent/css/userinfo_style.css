@@ -202,10 +202,16 @@ table td { padding-left: 10px;}
     border: 1px solid #503396;
     border-radius: 3px;
 }
+
+.loginUser{
+	border : none;
+	height: 30px;
+}
+
 .container-userinfo #ckBtn {
-    height: 46px;
     padding: 10px 30px;
-    line-height: 44px;
+    height: 40px;
+    width: 88px;
     color: white;
     background-color: #503396;
     border: 1px solid #503396;
