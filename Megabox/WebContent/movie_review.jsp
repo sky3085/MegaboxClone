@@ -215,13 +215,13 @@
 							<div class="tit">관람평</div>
 							<div class="story-point">${review_score}</div>
 							<div class="reviewBox">${review_text }</div>
-							<div class="story-like">
-								<!-- <button type="button" class="LikeBtn">
+							<!-- <div class="story-like">
+								<button type="button" class="LikeBtn">
 										<img src="image/good@2x.png"> <span>
 											<p>0</p>
 										</span>
-									</button> -->
-							</div>
+									</button>
+							</div> -->
 							<div class="story-util">
 								<div class="circle-wrap">
 									<div class="circle"></div>
@@ -245,7 +245,7 @@
 									</div>
 									<div class="btn-close">
 										<a href="#" title="닫기"><img
-											src="/static/pc/images/common/btn/btn-balloon-close.png"
+											src="image/btn-balloon-close.png"
 											alt="닫기"></a>
 									</div>
 								</div>
@@ -253,7 +253,7 @@
 								<div class="story-report-wrapper" title="수정,삭제">
 									<div class="btn-close">
 										<a href="#" title="닫기"><img
-											src="/static/pc/images/common/btn/btn-balloon-close.png"
+											src="image/btn-balloon-close.png"
 											alt="닫기"></a>
 									</div>
 									<p>신고하시겠습니까?</p>

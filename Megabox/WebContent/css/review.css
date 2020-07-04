@@ -108,9 +108,10 @@ textarea {
     display: none;
     position: absolute;
     right: 50px;
+    top : 0;
     z-index: 11;
     width: 260px;
-    height: 90px;
+    height: 84px;
     border: 1px solid #d8d9db;
     background-color: #fff;
     border-radius: 5px;
@@ -121,9 +122,10 @@ textarea {
     display: none;
     position: absolute;
     right: 50px;
+    top : 0;
     z-index: 11;
     width: 260px;
-    height: 90px;
+    height: 84px;
     border: 1px solid #d8d9db;
     background-color: #fff;
     border-radius: 5px;
